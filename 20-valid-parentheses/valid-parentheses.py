@@ -2,12 +2,12 @@ class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
         mapping = {")":"(", "}":"{", "]":"["}
-        for c in s:
-            if c in mapping:
-                if stack and stack[-1] == mapping[c]:
+        for i in s:
+            if i in mapping:
+                if stack and stack[-1] == mapping[i]:
                     stack.pop()
                 else:
                     return False
             else:
-                stack.append(c)
+                stack.append(i)
         return True if not stack else False
